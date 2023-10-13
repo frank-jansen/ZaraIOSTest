@@ -13,7 +13,6 @@ class EpisodeListViewModel:APIRequestable, ObservableObject {
     @Published var listOfCharacters = [Character]()
     @Published var episodeResults = [Episode]()
     @Published var errorMessage : String?
-    @Published var search: String = ""
     @Published var showError = false
     
     @Published var searchEpisode: String = ""
@@ -29,6 +28,7 @@ class EpisodeListViewModel:APIRequestable, ObservableObject {
         super.init()
         Publishers.CombineLatest($searchEpisode.removeDuplicates(),
                                  $episodeNumber.removeDuplicates())
+        .debounce(for: .seconds(1), scheduler: DispatchQueue.main)
         .sink {_ in
             Task { [weak self] in
                 await self?.loadEpisodeData(page: nil)

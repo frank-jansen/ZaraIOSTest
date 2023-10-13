@@ -11,11 +11,11 @@ import SwiftUI
 struct EpisodeSearchView: View {
     @StateObject var episodeListViewModel = EpisodeListViewModel()
     @StateObject var characterListViewModel = CharacterListViewModel()
-    @State var searched: String = ""
+    
     var body: some View {
         NavigationStack {
             VStack{
-                SearchBar(searched: $searched)
+                SearchBar(searched: $episodeListViewModel.searchEpisode)
                 List {
                     ForEach(0..<episodeListViewModel.episodeResults.count, id: \.self) { index in
                         let episode = episodeListViewModel.episodeResults[index]

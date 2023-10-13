@@ -14,6 +14,8 @@ class CharacterListViewModel: APIRequestable, ObservableObject  {
     @Published var dataIsLoading = false
     @Published var errorMessage : String?
     @Published var showError = false
+    @Published var displayMode = DisplayMode.list
+    @Published var currentOption = OtherOptions
     
     @Published var search: String = ""
     @Published var status: Character.Status?
@@ -86,6 +88,45 @@ class CharacterListViewModel: APIRequestable, ObservableObject  {
             // Request next page
             await loadData(page: next)
         }
+    }
+    
+}
+extension CharacterListViewModel {
+    enum DisplayMode {
+        case list
+        case grid
+        
+        var name: String {
+            switch self {
+            case .list: return "List"
+            case .grid: return "Grid"
+            }
+        }
+        
+        var imageName: String {
+            switch self {
+            case .list: return "list.bullet"
+            case .grid: return "rectangle.grid.2x2"
+            }
+        }
+        
+        var toggle: DisplayMode {
+            switch self {
+            case .list: return .grid
+            case .grid: return .list
+            }
+        }
+    }
+    
+    func toggleDisplay() {
+        displayMode = displayMode.toggle
+    }
+}
+
+extension CharacterListViewModel {
+    enum OtherOptions {
+        case status
+        case gender
     }
     
 }

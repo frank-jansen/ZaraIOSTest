@@ -1,5 +1,5 @@
 //
-//  ActionButonView.swift
+//  ActionButtonView.swift
 //  FrankJansenZaraIOSTest
 //
 //  Created by Frank Jansen on 3/10/23.
@@ -7,19 +7,18 @@
 
 import SwiftUI
 
-struct ActionButonView: View {
+
+struct ActionButtonView: View {
     
-    @Binding var toggleDisplayMode: Bool
     @EnvironmentObject var characterListViewModel: CharacterListViewModel
-    @State private var showBar = true
-    @State var statusButtonIsSelected = false
+    @State private var showSearchBar = true
     @State var gendersButtonIsSelected = false
     
     var body: some View {
         VStack {
             HStack {
                 Button {
-                    showBar.toggle()
+                    showSearchBar.toggle()
                     
                 } label: {
                     VStack {
@@ -34,8 +33,7 @@ struct ActionButonView: View {
                     }
                 }
                 Button {
-                    statusButtonIsSelected.toggle()
-                    gendersButtonIsSelected = false
+                    characterListViewModel.$currentOption
                     
                 } label: {
                     VStack(spacing: 4) {
@@ -67,17 +65,14 @@ struct ActionButonView: View {
                         
                     }
                 }
-                Button {
-                    toggleDisplayMode.toggle()
-                    
-                } label: {
+                Button(action: characterListViewModel.toggleDisplay) {
                     VStack {
-                        Image(systemName: toggleDisplayMode ? "list.bullet" : "rectangle.grid.2x2")
+                        Image(systemName: characterListViewModel.displayMode.imageName)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 24)
                         
-                        Text(toggleDisplayMode ? "List" : "Grid")
+                        Text(characterListViewModel.displayMode.name)
                             .font(Font.callout)
                             .frame(width: 80)
                     }
@@ -86,13 +81,14 @@ struct ActionButonView: View {
             
             
             .padding()
+            
             if statusButtonIsSelected {
                 chooseStatusBar
             }
             if gendersButtonIsSelected {
                 chooseGendersBar
             }
-            if showBar {
+            if showSearchBar {
                 SearchBar(searched: $characterListViewModel.search)
                     .padding(.horizontal, 30)
                 //                if let searching = searchViewModel.searchResponse {
@@ -194,9 +190,10 @@ struct ActionButonView: View {
     }
 }
 
+
 struct TabBar_Previews: PreviewProvider {
     static var previews: some View {
-        ActionButonView(toggleDisplayMode: .constant(Bool(false)))
+        ActionButtonView()
             .environmentObject(CharacterListViewModel())
     }
 }

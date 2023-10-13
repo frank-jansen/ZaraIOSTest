@@ -47,8 +47,8 @@
 		6EF5CA562A5333E5009A42EB /* CharacterListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5CA542A5333E5009A42EB /* CharacterListRowView.swift */; };
 		6EF5CA582A5334B1009A42EB /* Response+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5CA572A5334B1009A42EB /* Response+Mock.swift */; };
 		6EF5CA592A5334B1009A42EB /* Response+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5CA572A5334B1009A42EB /* Response+Mock.swift */; };
-		6EF5CA5C2A53594F009A42EB /* ActionButonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5CA5B2A53594E009A42EB /* ActionButonView.swift */; };
-		6EF5CA5D2A53594F009A42EB /* ActionButonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5CA5B2A53594E009A42EB /* ActionButonView.swift */; };
+		6EF5CA5C2A53594F009A42EB /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5CA5B2A53594E009A42EB /* ActionButtonView.swift */; };
+		6EF5CA5D2A53594F009A42EB /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5CA5B2A53594E009A42EB /* ActionButtonView.swift */; };
 		6EF5CA5F2A545804009A42EB /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5CA5E2A545804009A42EB /* CharacterDetailView.swift */; };
 		6EF5CA612A546F9E009A42EB /* EpisodeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5CA602A546F9E009A42EB /* EpisodeSearchView.swift */; };
 		6EF5CA632A547253009A42EB /* EpisodeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF5CA622A547253009A42EB /* EpisodeListViewModel.swift */; };
@@ -108,7 +108,7 @@
 		6EF5CA4E2A5323A1009A42EB /* CharacterListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		6EF5CA542A5333E5009A42EB /* CharacterListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListRowView.swift; sourceTree = "<group>"; };
 		6EF5CA572A5334B1009A42EB /* Response+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Mock.swift"; sourceTree = "<group>"; };
-		6EF5CA5B2A53594E009A42EB /* ActionButonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButonView.swift; sourceTree = "<group>"; };
+		6EF5CA5B2A53594E009A42EB /* ActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonView.swift; sourceTree = "<group>"; };
 		6EF5CA5E2A545804009A42EB /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		6EF5CA602A546F9E009A42EB /* EpisodeSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeSearchView.swift; sourceTree = "<group>"; };
 		6EF5CA622A547253009A42EB /* EpisodeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewModel.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				6E993BD32A61CAA600206BD2 /* CharacterSearchView.swift */,
-				6EF5CA5B2A53594E009A42EB /* ActionButonView.swift */,
+				6EF5CA5B2A53594E009A42EB /* ActionButtonView.swift */,
 				6EF5CA4B2A525A80009A42EB /* CharacterListView.swift */,
 				6EF5CA542A5333E5009A42EB /* CharacterListRowView.swift */,
 				6EF5CA5E2A545804009A42EB /* CharacterDetailView.swift */,
@@ -463,7 +463,7 @@
 				6EF5CA552A5333E5009A42EB /* CharacterListRowView.swift in Sources */,
 				6EF5CA372A5235B2009A42EB /* ResponseInfo.swift in Sources */,
 				6EF5C9F42A5215AC009A42EB /* FrankJansenZaraIOSTestApp.swift in Sources */,
-				6EF5CA5C2A53594F009A42EB /* ActionButonView.swift in Sources */,
+				6EF5CA5C2A53594F009A42EB /* ActionButtonView.swift in Sources */,
 				6EF5CA582A5334B1009A42EB /* Response+Mock.swift in Sources */,
 				6EF5CA402A5255C1009A42EB /* Origin.swift in Sources */,
 			);
@@ -477,7 +477,7 @@
 				6EF5CA3A2A5246B6009A42EB /* Response.swift in Sources */,
 				6E993BCF2A61A8DA00206BD2 /* SearchBar.swift in Sources */,
 				6EF5CA502A5323A1009A42EB /* CharacterListViewModel.swift in Sources */,
-				6EF5CA5D2A53594F009A42EB /* ActionButonView.swift in Sources */,
+				6EF5CA5D2A53594F009A42EB /* ActionButtonView.swift in Sources */,
 				6EF5CA662A547467009A42EB /* Episode+Mock.swift in Sources */,
 				6EF5CA562A5333E5009A42EB /* CharacterListRowView.swift in Sources */,
 				6EF5CA442A5257A4009A42EB /* Location.swift in Sources */,

@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct CharacterSearchView: View {
-    @State var displayMode = true
     @StateObject var characterListViewModel = CharacterListViewModel()
     
     var body: some View {
         NavigationStack {
             VStack {
-                ActionButonView(toggleDisplayMode: $displayMode)
+                ActionButtonView()
                     .environmentObject(characterListViewModel)
-                if displayMode {
+                
+                switch characterListViewModel.displayMode {
+                case .list:
                     CharacterListView()
                         .environmentObject(characterListViewModel)
-                } else {
+                case .grid:
                     CharacterGridView()
                         .environmentObject(characterListViewModel)
                 }
