@@ -12,7 +12,6 @@ struct ActionButtonView: View {
     
     @EnvironmentObject var characterListViewModel: CharacterListViewModel
     @State private var showSearchBar = true
-    @State var gendersButtonIsSelected = false
     
     var body: some View {
         VStack {
@@ -33,8 +32,7 @@ struct ActionButtonView: View {
                     }
                 }
                 Button {
-                    characterListViewModel.$currentOption
-                    
+                    characterListViewModel.currentOption = .status
                 } label: {
                     VStack(spacing: 4) {
                         Image(systemName: "cross")
@@ -47,8 +45,7 @@ struct ActionButtonView: View {
                     }
                 }
                 Button {
-                    gendersButtonIsSelected.toggle()
-                    statusButtonIsSelected = false
+                    characterListViewModel.currentOption = .gender
                 } label: {
                     VStack (spacing: 4){
                         
@@ -82,18 +79,16 @@ struct ActionButtonView: View {
             
             .padding()
             
-            if statusButtonIsSelected {
+            switch characterListViewModel.currentOption {
+            case .status:
                 chooseStatusBar
-            }
-            if gendersButtonIsSelected {
+            case .gender:
                 chooseGendersBar
             }
+            
             if showSearchBar {
                 SearchBar(searched: $characterListViewModel.search)
                     .padding(.horizontal, 30)
-                //                if let searching = searchViewModel.searchResponse {
-                //                    SearchListView(selected: $selectectText, locations: searching)
-                //                }
             }
             
         }
@@ -125,6 +120,7 @@ struct ActionButtonView: View {
                 }
             } label: {
                 Text("Unknown")
+                    
                 Image(systemName: "smallcircle.filled.circle")
                     .foregroundColor(Character.Status.unknown.color)
             }

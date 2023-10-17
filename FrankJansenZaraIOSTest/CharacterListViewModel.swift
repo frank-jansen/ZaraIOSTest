@@ -15,7 +15,8 @@ class CharacterListViewModel: APIRequestable, ObservableObject  {
     @Published var errorMessage : String?
     @Published var showError = false
     @Published var displayMode = DisplayMode.list
-    @Published var currentOption = OtherOptions
+    @Published var currentOption = OtherOptions.status
+    @Published var selectedOption = false
     
     @Published var search: String = ""
     @Published var status: Character.Status?
